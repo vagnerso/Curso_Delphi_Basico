@@ -1,0 +1,97 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Delphi B'#225'sico - Aula 17 - StringList'
+  ClientHeight = 519
+  ClientWidth = 482
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 482
+    Height = 50
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Delphi B'#225'sico - Aula 17 - StringList'
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 8388863
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 628
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 50
+    Width = 482
+    Height = 448
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitTop = 43
+    ExplicitWidth = 628
+    ExplicitHeight = 449
+    object mmoLista: TMemo
+      Left = 0
+      Top = 95
+      Width = 482
+      Height = 353
+      Align = alBottom
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      ExplicitTop = 96
+      ExplicitWidth = 628
+    end
+    object btnCriarLista: TButton
+      Left = 64
+      Top = 17
+      Width = 337
+      Height = 57
+      Caption = 'Criar lista'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnCriarListaClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 498
+    Width = 482
+    Height = 21
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitWidth = 628
+  end
+end

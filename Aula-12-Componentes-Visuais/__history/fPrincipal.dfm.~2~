@@ -1,0 +1,55 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Tela principal'
+  ClientHeight = 402
+  ClientWidth = 636
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MainMenu1
+  TextHeight = 15
+  object MainMenu1: TMainMenu
+    Left = 56
+    Top = 232
+    object Cadastros1: TMenuItem
+      Caption = 'Cadastros'
+      object Usurios1: TMenuItem
+        Caption = 'Usu'#225'rios'
+      end
+      object Produtos1: TMenuItem
+        Caption = 'Produtos'
+      end
+      object Classificao1: TMenuItem
+        Caption = 'Classifica'#231#227'o'
+        object Cor1: TMenuItem
+          Caption = 'Cor'
+        end
+        object Categoria1: TMenuItem
+          Caption = 'Categoria'
+        end
+      end
+    end
+    object Movimentao1: TMenuItem
+      Caption = 'Movimenta'#231#227'o'
+      object Vendas1: TMenuItem
+        Caption = 'Vendas'
+      end
+      object Compras1: TMenuItem
+        Caption = 'Compras'
+      end
+    end
+    object Relatrios1: TMenuItem
+      Caption = 'Relat'#243'rios'
+      object Relatriodevendas1: TMenuItem
+        Caption = 'Relat'#243'rio de vendas'
+      end
+      object Relatriodeestoque1: TMenuItem
+        Caption = 'Relat'#243'rio de estoque'
+      end
+    end
+  end
+end

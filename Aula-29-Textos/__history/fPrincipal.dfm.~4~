@@ -1,0 +1,256 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 
+    'Delphi B'#225'sico - Aula 29 - Como Manipular Textos no Delphi - Stri' +
+    'ngs, Copy, Pos, Length e Mais!'
+  ClientHeight = 566
+  ClientWidth = 1090
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1090
+    Height = 50
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 
+      'Delphi B'#225'sico - Aula 29 - Como Manipular Textos no Delphi - Stri' +
+      'ngs, Copy, Pos, Length e Mais!'
+    Color = 11096118
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 704
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 549
+    Width = 1090
+    Height = 17
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 11096118
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitTop = 363
+    ExplicitWidth = 704
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 50
+    Width = 1090
+    Height = 499
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitWidth = 704
+    ExplicitHeight = 313
+    object Label1: TLabel
+      Left = 400
+      Top = 32
+      Width = 121
+      Height = 28
+      Caption = 'Texto Original'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 14587009
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 752
+      Top = 32
+      Width = 157
+      Height = 28
+      Caption = 'Texto Manipulado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 14587009
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Panel4: TPanel
+      Left = 8
+      Top = 32
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'String Replace'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Panel5: TPanel
+      Left = 8
+      Top = 96
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'Copy'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Panel6: TPanel
+      Left = 8
+      Top = 160
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'Pos'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 2
+    end
+    object Panel7: TPanel
+      Left = 8
+      Top = 224
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'Upper Case'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 3
+    end
+    object Panel8: TPanel
+      Left = 8
+      Top = 288
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'Lower Case'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 4
+    end
+    object Panel9: TPanel
+      Left = 8
+      Top = 352
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'To String'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 5
+      OnClick = Panel9Click
+    end
+    object Panel10: TPanel
+      Left = 8
+      Top = 416
+      Width = 180
+      Height = 49
+      Cursor = crHandPoint
+      Caption = 'Length'
+      Color = 14587009
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 6
+    end
+    object mmoTextoOriginal: TMemo
+      Left = 400
+      Top = 66
+      Width = 320
+      Height = 399
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 11096118
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Lines.Strings = (
+        'Lorem ipsum dolor sit amet . Os '
+        'operadores gr'#225'ficos e tipogr'#225'ficos '
+        'sabem disso bem, na realidade, todas '
+        'as profiss'#245'es que lidam com o universo '
+        'da comunica'#231#227'o t'#234'm um '
+        'relacionamento est'#225'vel com essas '
+        'palavras, mas o que '#233'? Lorem ipsum '#233' '
+        'um texto fofo sem qualquer sentido.'
+        #201' uma seq'#252#234'ncia de palavras latinas '
+        'que, como est'#227'o posicionadas, n'#227'o '
+        'formem frases com um sentido '
+        'completo, mas d'#227'o vida a um texto de '
+        'teste '#250'til para preencher espa'#231'os que '
+        'ir'#227'o Posteriormente ser'#227'o ocupados a '
+        'partir de textos ad hoc compostos por '
+        'profissionais de comunica'#231#227'o.')
+      ParentFont = False
+      TabOrder = 7
+    end
+    object mmoTextoManipulado: TMemo
+      Left = 752
+      Top = 66
+      Width = 320
+      Height = 399
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 11096118
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+    end
+  end
+end

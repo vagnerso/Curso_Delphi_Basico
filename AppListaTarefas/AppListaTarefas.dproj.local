@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/10/10 19:40:56.000.115,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 17:44:12.000.810,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 17:52:04.000.311,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 17:56:00.000.131,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 18:40:10.000.051,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/19 20:55:29.000.471,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/19 21:18:38.000.983,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/23 19:17:52.000.749,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/11/19 00:03:49.000.967,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/11/19 00:04:33.000.887,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\Formularios\fPrincipal.dfm</Transaction>
+    <Transaction>2024/11/19 00:04:33.000.887,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\Formularios\fPrincipal.pas</Transaction>
+    <Transaction>2024/11/19 00:05:42.000.877,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\AppListaTarefas.dproj</Transaction>
+    <Transaction>2024/11/28 00:25:13.000.248,=C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\Unit1.pas</Transaction>
+    <Transaction>2024/11/28 00:25:54.000.458,C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\Unit1.pas=C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\DataModules\dPrincipal.pas</Transaction>
+    <Transaction>2024/11/28 00:25:54.000.458,C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\Unit1.dfm=C:\Arquivos_de_Trabalho\Projetos_Delphi\Curso_Delphi_Basico\AppListaTarefas\DataModules\dPrincipal.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

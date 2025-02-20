@@ -1,0 +1,109 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Delphi B'#225'sico - Aula 23 - Trabalhando com arquivos e pastas'
+  ClientHeight = 577
+  ClientWidth = 756
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 756
+    Height = 50
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Delphi B'#225'sico - Aula 23 - Trabalhando com arquivos e pastas'
+    Color = 8388672
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 751
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 560
+    Width = 756
+    Height = 17
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitWidth = 751
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 50
+    Width = 756
+    Height = 510
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitLeft = 8
+    ExplicitTop = 34
+    ExplicitWidth = 751
+    object Button1: TButton
+      Left = 8
+      Top = 24
+      Width = 265
+      Height = 49
+      Caption = 'Criar pasta'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 8
+      Top = 135
+      Width = 265
+      Height = 50
+      Caption = 'Abrir arquivo de texto'
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 8
+      Top = 191
+      Width = 265
+      Height = 50
+      Caption = 'Apagar arquivo'
+      TabOrder = 2
+    end
+    object Button4: TButton
+      Left = 8
+      Top = 247
+      Width = 265
+      Height = 50
+      Caption = 'Copiar arquivo'
+      TabOrder = 3
+    end
+    object Button5: TButton
+      Left = 8
+      Top = 79
+      Width = 265
+      Height = 50
+      Caption = 'Apagar pasta'
+      TabOrder = 4
+    end
+    object mmoTexto: TMemo
+      Left = 304
+      Top = 24
+      Width = 441
+      Height = 465
+      Lines.Strings = (
+        'mmoTexto')
+      TabOrder = 5
+    end
+  end
+end

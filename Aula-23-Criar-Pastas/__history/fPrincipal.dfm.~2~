@@ -1,0 +1,44 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Delphi B'#225'sico - Aula 23 - Trabalhando com arquivos e pastas'
+  ClientHeight = 577
+  ClientWidth = 751
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 751
+    Height = 50
+    Align = alTop
+    Caption = 'Delphi B'#225'sico - Aula 23 - Trabalhando com arquivos e pastas'
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 560
+    Width = 751
+    Height = 17
+    Align = alBottom
+    TabOrder = 1
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 50
+    Width = 751
+    Height = 510
+    Align = alClient
+    TabOrder = 2
+    ExplicitLeft = 288
+    ExplicitTop = 288
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+  end
+end

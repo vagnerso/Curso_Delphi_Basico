@@ -1,0 +1,63 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    mmoLista: TMemo;
+    btnCriarLista: TButton;
+    procedure btnCriarListaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnCriarListaClick(Sender: TObject);
+var
+  lListaFrutas: TStringList;
+begin
+
+  lListaFrutas := TStringList.Create;
+  try
+
+
+     lListaFrutas.Add('Laranja');
+     lListaFrutas.Add('Maçã');
+     lListaFrutas.Add('Limão');
+     lListaFrutas.Add('Abacate');
+     lListaFrutas.Add('Melancia');
+     lListaFrutas.Add('Ameixa');
+     lListaFrutas.Add('Bergamota');
+     lListaFrutas.Insert(5, 'Morango');
+
+     mmoLista.Clear;
+     mmoLista.Text := lListaFrutas.Text;
+     //mmoLista.Lines.Add(lListaFrutas.indexOf('Melancia').ToString);
+     //mmoLista.Lines.Add(lListaFrutas[3]);
+
+     //lListaFrutas.Delete(2);
+
+     //mmoLista.Lines.text := lListaFrutas.Text;
+
+  finally
+    lListaFrutas.Free;
+  end;
+
+end;
+
+end.

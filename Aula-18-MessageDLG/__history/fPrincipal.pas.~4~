@@ -1,0 +1,52 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnLimparTexto: TButton;
+    mmoTexto: TMemo;
+    Label1: TLabel;
+    procedure FormShow(Sender: TObject);
+    procedure btnLimparTextoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnLimparTextoClick(Sender: TObject);
+begin
+
+  if MessageDlg('Deseja realmente limpar o texto',
+  TMsgDlgType.mtInformation,
+  [mbYes, mbNo, mbCancel],
+  0,
+  mbCancel,
+  ['Sim', 'Não', 'Cancelar']) = mrYes then
+  begin
+    mmoTexto.Lines.Clear;
+  end;
+
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  mmoTexto.Lines.Clear;
+end;
+
+end.

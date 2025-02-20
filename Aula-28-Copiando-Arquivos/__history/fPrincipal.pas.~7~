@@ -1,0 +1,124 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnApagarPastaVazia: TButton;
+    edtOrigem: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtDestino: TEdit;
+    imgBotaoCaminho: TImage;
+    imgBotaoCaminhoCopia: TImage;
+    FileOpenDialog1: TFileOpenDialog;
+    SaveDialog1: TSaveDialog;
+    Button1: TButton;
+    procedure imgBotaoCaminhoClick(Sender: TObject);
+    procedure imgBotaoCaminhoCopiaClick(Sender: TObject);
+    procedure btnApagarPastaVaziaClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnApagarPastaVaziaClick(Sender: TObject);
+begin
+
+  try
+    TFile.Copy(edtOrigem.Text, edtDestino.Text, False);
+    ShowMessage('Arquivo copiado com sucesso!');
+  except
+    on E: Exception do
+      ShowMessage('Erro ao copiar arquivo: ' + E.Message);
+  end;
+
+end;
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+var
+  Origem, Destino, NomeArquivo, ExtensaoEscolhida, ExtensaoPadrao: string;
+begin
+  if FileOpenDialog1.Execute then
+  begin
+    Origem := FileOpenDialog1.FileName;
+    NomeArquivo := ChangeFileExt(ExtractFileName(Origem), ''); // Remove a extensão do nome original
+
+    // Definir os filtros de extensões
+    SaveDialog1.Filter :=
+      'Texto (*.txt)|*.txt|Documento Word (*.docx)|*.docx|Imagem JPEG (*.jpg)|*.jpg|Todos os arquivos (*.*)|*.*';
+    SaveDialog1.FilterIndex := 1; // Define a extensão padrão inicial (TXT)
+    SaveDialog1.FileName := NomeArquivo; // Sugere o nome sem extensão
+    SaveDialog1.InitialDir := ExtractFilePath(Origem);
+
+    if SaveDialog1.Execute then
+    begin
+      Destino := SaveDialog1.FileName;
+      ExtensaoEscolhida := ExtractFileExt(Destino);
+
+      // Definir a extensão correta conforme o filtro selecionado
+      case SaveDialog1.FilterIndex of
+        1: ExtensaoPadrao := '.txt';
+        2: ExtensaoPadrao := '.docx';
+        3: ExtensaoPadrao := '.jpg';
+      else
+        ExtensaoPadrao := ''; // Para "Todos os arquivos"
+      end;
+
+      // Se o usuário não digitou uma extensão válida, adicionamos a correta
+      if (ExtensaoEscolhida = '') and (ExtensaoPadrao <> '') then
+        Destino := Destino + ExtensaoPadrao;
+
+      try
+        TFile.Copy(Origem, Destino, True);
+        ShowMessage('Arquivo copiado com sucesso para: ' + Destino);
+      except
+        on E: Exception do
+          ShowMessage('Erro ao copiar arquivo: ' + E.Message);
+      end;
+    end;
+  end;
+end;
+
+procedure TfrmPrincipal.imgBotaoCaminhoClick(Sender: TObject);
+begin
+
+  if FileOpenDialog1.Execute then
+  begin
+    edtOrigem.Text := FileOpenDialog1.FileName;
+  end;
+
+end;
+
+procedure TfrmPrincipal.imgBotaoCaminhoCopiaClick(Sender: TObject);
+begin
+
+  if FileOpenDialog1.Execute then
+  begin
+    edtDestino.Text := FileOpenDialog1.FileName;
+  end;
+
+end;
+
+end.
+

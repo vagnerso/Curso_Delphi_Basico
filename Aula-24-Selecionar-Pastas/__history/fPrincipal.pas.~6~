@@ -1,0 +1,74 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    btnSelecionarPasta: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    mmoTexto: TMemo;
+    procedure Button1Click(Sender: TObject);
+    procedure btnSelecionarPastaClick(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnSelecionarPastaClick(Sender: TObject);
+var
+  FileDialog: TFileOpenDialog;
+begin
+  FileDialog := TFileOpenDialog.Create(Self);
+  try
+    FileDialog.Options := FileDialog.Options + [fdoPickFolders]; // Permite selecionar pastas
+    if FileDialog.Execute then
+      ShowMessage('Pasta selecionada: ' + FileDialog.FileName);
+  finally
+    FileDialog.Free;
+  end;
+
+end;
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+begin
+
+  if not DirectoryExists('c:\pasta01\subpasta01') then
+  begin
+    CreateDir('c:\pasta01\subpasta01');
+  end;
+
+end;
+
+procedure TfrmPrincipal.Button4Click(Sender: TObject);
+var
+  Folder: string;
+begin
+  Folder := '';
+  if SelectDirectory('Selecione uma pasta', '', Folder) then
+    ShowMessage('Pasta selecionada: ' + Folder)
+  else
+    ShowMessage('Nenhuma pasta foi selecionada.');
+
+end;
+
+end.

@@ -1,0 +1,168 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'App de Tarefas'
+  ClientHeight = 676
+  ClientWidth = 836
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -17
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnShow = FormShow
+  TextHeight = 23
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 836
+    Height = 41
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'App de Tarefas'
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 1038
+  end
+  object pnlMenuAcoes: TPanel
+    Left = 0
+    Top = 41
+    Width = 836
+    Height = 70
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitTop = 35
+    ExplicitWidth = 1044
+    object imgBotaoIncluir: TImage
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 70
+      Height = 64
+      Align = alLeft
+      Center = True
+      OnClick = imgBotaoIncluirClick
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitHeight = 70
+    end
+    object imgBotaoExcluir: TImage
+      AlignWithMargins = True
+      Left = 79
+      Top = 3
+      Width = 70
+      Height = 64
+      Align = alLeft
+      Center = True
+      ExplicitLeft = 70
+      ExplicitTop = 0
+      ExplicitHeight = 70
+    end
+    object imgBotaoFechar: TImage
+      AlignWithMargins = True
+      Left = 155
+      Top = 3
+      Width = 70
+      Height = 64
+      Align = alLeft
+      Center = True
+      ExplicitLeft = 140
+      ExplicitTop = 0
+      ExplicitHeight = 70
+    end
+  end
+  object pnlInformacoes: TPanel
+    Left = 0
+    Top = 111
+    Width = 836
+    Height = 258
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 2
+    StyleName = 'Windows'
+  end
+  object pnlRodape: TPanel
+    Left = 0
+    Top = 664
+    Width = 836
+    Height = 12
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 3
+    StyleName = 'Windows'
+  end
+  object grdTarefas: TDBGrid
+    Left = 0
+    Top = 439
+    Width = 497
+    Height = 225
+    Align = alLeft
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -17
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object pnlDescricaoTarefa: TPanel
+    Left = 497
+    Top = 439
+    Width = 339
+    Height = 225
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 5
+    StyleName = 'Windows'
+    ExplicitLeft = 569
+    ExplicitTop = 368
+    ExplicitWidth = 469
+    ExplicitHeight = 268
+  end
+  object pnlMenuSalvar: TPanel
+    Left = 0
+    Top = 369
+    Width = 836
+    Height = 70
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 6
+    StyleName = 'Windows'
+    ExplicitTop = 8
+    object imgBotaoSalvar: TImage
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 70
+      Height = 64
+      Align = alLeft
+      Center = True
+      OnClick = imgBotaoSalvarClick
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitHeight = 70
+    end
+    object imgBotaoCancelar: TImage
+      AlignWithMargins = True
+      Left = 79
+      Top = 3
+      Width = 70
+      Height = 64
+      Align = alLeft
+      Center = True
+      OnClick = imgBotaoCancelarClick
+      ExplicitLeft = 70
+      ExplicitTop = 0
+      ExplicitHeight = 70
+    end
+  end
+end

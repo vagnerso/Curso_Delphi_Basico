@@ -1,0 +1,59 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Aula - 13 - Componentes N'#227'o Visuais'
+  ClientHeight = 442
+  ClientWidth = 628
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 628
+    Height = 50
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Aula 13 - Componentes N'#227'o Visuais'
+    Color = 6458192
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 50
+    Width = 628
+    Height = 374
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitHeight = 351
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 424
+    Width = 628
+    Height = 18
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clGray
+    ParentBackground = False
+    TabOrder = 2
+    StyleName = 'Windows'
+  end
+end

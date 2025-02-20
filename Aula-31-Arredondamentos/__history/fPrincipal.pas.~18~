@@ -1,0 +1,124 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage,
+  Vcl.WinXPanels, StrUtils, Math;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    pnlPower: TPanel;
+    pnlStrToFloat: TPanel;
+    pnlRandom: TPanel;
+    pnlIntToStr: TPanel;
+    pnlStrToInt: TPanel;
+    pnlSqrt: TPanel;
+    pnlFloatToStr: TPanel;
+    Label1: TLabel;
+    pnlFormatFloat: TPanel;
+    edtResultado: TEdit;
+    procedure pnlIntToStrClick(Sender: TObject);
+    procedure pnlStrToIntClick(Sender: TObject);
+    procedure pnlFloatToStrClick(Sender: TObject);
+    procedure pnlStrToFloatClick(Sender: TObject);
+    procedure pnlRandomClick(Sender: TObject);
+    procedure pnlFormatFloatClick(Sender: TObject);
+    procedure pnlPowerClick(Sender: TObject);
+    procedure pnlSqrtClick(Sender: TObject);
+
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.pnlFloatToStrClick(Sender: TObject);
+var
+  lNumero: Double;
+begin
+
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlFormatFloatClick(Sender: TObject);
+var
+  lNumero: Double;
+begin
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlIntToStrClick(Sender: TObject);
+var
+  lNumero: Integer;
+begin
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlPowerClick(Sender: TObject);
+var
+  lNumero: Integer;
+begin
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlRandomClick(Sender: TObject);
+var
+  lNumero: Integer;
+begin
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlSqrtClick(Sender: TObject);
+var
+  lNumero: Integer;
+begin
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlStrToFloatClick(Sender: TObject);
+var
+  lNumero: Double;
+begin
+
+
+
+end;
+
+procedure TfrmPrincipal.pnlStrToIntClick(Sender: TObject);
+var
+  lNumero: Integer;
+begin
+
+
+
+end;
+
+end.
+

@@ -1,0 +1,99 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnApagarPastaVazia: TButton;
+    edtCaminho: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtCaminhoCopia: TEdit;
+    FileOpenDialog1: TFileOpenDialog;
+    imgBotaoCaminho: TImage;
+    imgBotaoCaminhoCopia: TImage;
+    procedure btnApagarPastaVaziaClick(Sender: TObject);
+    procedure btnApagarPastaComArquivosClick(Sender: TObject);
+    procedure imgBotaoCaminhoClick(Sender: TObject);
+    procedure imgBotaoCaminhoCopiaClick(Sender: TObject);
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnApagarPastaComArquivosClick(Sender: TObject);
+begin
+
+  if TDirectory.Exists(edtCaminho.Text) then
+  begin
+
+    // excluir a pasta
+    try
+
+      TDirectory.Delete(edtCaminho.Text, True);
+      ShowMessage('Pasta excluida com sucesso!');
+
+    except on E: Exception do
+      ShowMessage('Erro ao tentar excluir a pasta: ' + sLineBreak +
+                 E.Message);
+    end;
+
+  end
+  else
+  begin
+    ShowMessage('Pasta não encontrada, por gentileza conferir e tentar novamente.')
+  end;
+
+end;
+
+procedure TfrmPrincipal.btnApagarPastaVaziaClick(Sender: TObject);
+begin
+
+  try
+    // Copia o conteúdo da pasta Origem para a pasta Destino
+    TDirectory.Copy(edtCaminho.Text,
+                    edtCaminhoCopia.Text); // O parâmetro True indica que subdiretórios também serão copiados
+    ShowMessage('Pasta copiada com sucesso!');
+  except
+    on E: Exception do
+      ShowMessage('Erro ao copiar pasta: ' + E.Message);
+  end;
+
+end;
+
+procedure TfrmPrincipal.imgBotaoCaminhoClick(Sender: TObject);
+begin
+  if FileOpenDialog1.Execute then
+  begin
+    edtCaminho.Text := FileOpenDialog1.FileName;
+  end;
+end;
+
+procedure TfrmPrincipal.imgBotaoCaminhoCopiaClick(Sender: TObject);
+begin
+  if FileOpenDialog1.Execute then
+  begin
+    edtCaminhoCopia.Text := FileOpenDialog1.FileName;
+  end;
+end;
+
+end.
+

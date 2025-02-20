@@ -1,0 +1,89 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage,
+  Vcl.WinXPanels, StrUtils;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel8: TPanel;
+    Panel9: TPanel;
+    Panel10: TPanel;
+    mmoTextoOriginal: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+    mmoTextoManipulado: TMemo;
+    Panel11: TPanel;
+    procedure Panel9Click(Sender: TObject);
+    procedure Panel6Click(Sender: TObject);
+    procedure Panel4Click(Sender: TObject);
+    procedure Panel11Click(Sender: TObject);
+
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.Panel11Click(Sender: TObject);
+begin
+  if ContainsText(mmoTextoOriginal.Text, 'Lorem') then
+  begin
+    mmoTextoManipulado.Text := 'Texto Ok';
+  end
+  else
+  begin
+    mmoTextoManipulado.Text := 'Texto não encontrado';
+  end;
+end;
+
+procedure TfrmPrincipal.Panel4Click(Sender: TObject);
+begin
+  mmoTextoManipulado.Text := StringReplace(mmoTextoOriginal.Text,
+                                           'Lorem ipsum',
+                                           'Gato amarelo',
+                                           [rfReplaceAll, rfIgnoreCase]);
+end;
+
+procedure TfrmPrincipal.Panel6Click(Sender: TObject);
+begin
+  //mmoTextoManipulado.Text := Pos('dolor', mmoTextoOriginal.Text).ToString;
+  mmoTextoManipulado.Text :=
+  Copy(mmoTextoOriginal.Text,
+      Pos('?', mmoTextoOriginal.Text)+1,
+          Length(mmoTextoOriginal.Text));
+
+end;
+
+procedure TfrmPrincipal.Panel9Click(Sender: TObject);
+var
+  lNumero: Integer;
+  lFloat: Currency;
+begin
+  lNumero := 1000;
+  lFloat := 150.99;
+  mmoTextoManipulado.Text := lNumero.ToString + sLineBreak + lFloat.ToString();
+end;
+
+end.
+

@@ -1,0 +1,82 @@
+unit fPrincipaç;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  meuArray: array [0..5] of string;
+  meuArrayDinamico: array of string;
+  minhaMatriz: array [0..4,0..1] of string;
+  minhaMatrizDinamica: array of array of string;
+  I: Integer;
+  J: Integer;
+begin
+
+  setLength(meuArrayDinamico, 10);
+
+  meuArray[0] := 'Parcela 1';
+  meuArray[1] := 'Parcela 2';
+  meuArray[2] := 'Parcela 3';
+  meuArray[3] := 'Parcela 4';
+  meuArray[4] := 'Parcela 5';
+
+  Memo1.Lines.Clear;
+//  for I := 0 to 5 do
+//  begin
+//    Memo1.Lines.Add(meuArray[i]);
+//  end;
+
+  for I := 0 to Length(meuArrayDinamico) -1 do
+  begin
+    meuArrayDinamico[i] := 'Parcela: ' + (i + 1).ToString;
+  end;
+
+  minhaMatriz[0,0] := 'Roberto Carlos';
+  minhaMatriz[0,1] := 'Cantor';
+
+  minhaMatriz[1,0] := 'Vagner';
+  minhaMatriz[1,1] := 'Programador';
+
+  minhaMatriz[2,0] := 'Claudia';
+  minhaMatriz[2,1] := 'Psicóloga';
+
+  minhaMatriz[3,0] := 'Jefferson';
+  minhaMatriz[3,1] := 'Programador';
+
+  minhaMatriz[4,0] := 'Rafael';
+  minhaMatriz[4,1] := 'Programador';
+
+  for I := 0 to 4 do
+  begin
+    memo1.Lines.Add(minhamatriz[i,0] + ' : ' + minhamatriz[i,1] );
+  end;
+
+  SetLength(minhaMatrizDinamica, 3, 2);
+
+
+
+end;
+
+end.

@@ -1,0 +1,129 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.WinXCalendars, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage,
+  Vcl.WinXPickers, Vcl.DBCtrls;
+
+type TOperacao = (opIncluir, opAlterar);
+
+type
+  TfrmPrincipal = class(TForm)
+    pnlTitulo: TPanel;
+    Panel3: TPanel;
+    pnlManutencao: TPanel;
+    pnlCadastro: TPanel;
+    grdPesquisa: TDBGrid;
+    calData: TCalendarPicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    rdgSituacao: TRadioGroup;
+    imgBotaoNovo: TImage;
+    imgBotaoExcluir: TImage;
+    imgBotaoFechar: TImage;
+    Label3: TLabel;
+    tmpTempoEstimado: TTimePicker;
+    pnlMenuSalvar: TPanel;
+    imgBotaoSalvar: TImage;
+    imgBotaoCancelar: TImage;
+    dtsTarefas: TDataSource;
+    mmoDescricao: TMemo;
+    Panel1: TPanel;
+    Panel4: TPanel;
+    DBMemo1: TDBMemo;
+    procedure imgBotaoSalvarClick(Sender: TObject);
+    procedure imgBotaoFecharClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure imgBotaoCancelarClick(Sender: TObject);
+    procedure imgBotaoNovoClick(Sender: TObject);
+    procedure grdPesquisaDblClick(Sender: TObject);
+  private
+    FOperacao: TOperacao;
+
+    procedure ModoConsulta;
+    procedure ModoEdicao;
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  dPrincipal;
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.imgBotaoSalvarClick(Sender: TObject);
+begin
+
+  case FOperacao of
+    opIncluir: dtmPrincipal.memTarefas.Insert;
+    opAlterar: dtmPrincipal.memTarefas.Edit;
+  end;
+
+  dtmPrincipal.memTarefasId.AsInteger := 0;
+  dtmPrincipal.memTarefasData.AsDateTime := calData.Date;
+  dtmPrincipal.memTarefasDescricao.AsString := mmoDescricao.Lines.Text;
+  dtmPrincipal.memTarefasSituacao.AsInteger := rdgSituacao.ItemIndex;
+  dtmPrincipal.memTarefasTempoEstimado.AsDateTime := tmpTempoEstimado.Time;
+
+  dtmPrincipal.memTarefas.Post;
+  ShowMessage('Sucesso ao salvar a tarefa!');
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  dtmPrincipal.memTarefas.CreateDataSet;
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.ModoConsulta;
+begin
+  pnlManutencao.Visible := True;
+  pnlCadastro.Visible := False;
+  pnlMenuSalvar.Visible := False;
+end;
+
+procedure TfrmPrincipal.ModoEdicao;
+begin
+  pnlManutencao.Visible := False;
+  pnlCadastro.Visible := True;
+  pnlMenuSalvar.Visible := True;
+end;
+
+procedure TfrmPrincipal.grdPesquisaDblClick(Sender: TObject);
+begin
+  FOperacao := opAlterar;
+  calData.Date := dtmPrincipal.memTarefasData.AsDateTime;
+  rdgSituacao.ItemIndex := dtmPrincipal.memTarefasSituacao.AsInteger;
+  tmpTempoEstimado.Time := dtmPrincipal.memTarefasTempoEstimado.AsDateTime;
+  mmoDescricao.Text := dtmPrincipal.memTarefasDescricao.AsString;
+end;
+
+procedure TfrmPrincipal.imgBotaoCancelarClick(Sender: TObject);
+begin
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.imgBotaoFecharClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TfrmPrincipal.imgBotaoNovoClick(Sender: TObject);
+begin
+  FOperacao := opIncluir;
+  ModoEdicao;
+  calData.SetFocus;
+end;
+
+end.

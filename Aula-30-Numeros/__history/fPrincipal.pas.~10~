@@ -1,0 +1,44 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage,
+  Vcl.WinXPanels, StrUtils;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    pnlStringReplace: TPanel;
+    pnlCopy: TPanel;
+    pnlPos: TPanel;
+    pnlUpperCase: TPanel;
+    pnlLowerCase: TPanel;
+    pnlToString: TPanel;
+    pnlLength: TPanel;
+    mmoResultado: TMemo;
+    Label1: TLabel;
+    pnlContainsText: TPanel;
+    pnlCopyPos: TPanel;
+
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.
+

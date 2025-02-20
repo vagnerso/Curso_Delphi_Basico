@@ -1,0 +1,85 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    pnlTitulo: TPanel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    edtNumero1: TEdit;
+    edtNumero2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    lblResultado: TLabel;
+    btnSomar: TButton;
+    btnSubtrair: TButton;
+    btnSomarSubtrair: TButton;
+    procedure btnSomarClick(Sender: TObject);
+    procedure btnSubtrairClick(Sender: TObject);
+    procedure btnSomarSubtrairClick(Sender: TObject);
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrmPrincipal }
+
+procedure TfrmPrincipal.btnSomarClick(Sender: TObject);
+var
+  lNumero1: Integer;
+  lNumero2: Integer;
+begin
+
+  lNumero1 := StrToIntDef(edtNumero1.Text, 0);
+  lNumero2 := StrToIntDef(edtNumero2.Text, 0);
+
+  lblResultado.Caption := 'Soma = ' + IntToStr(lNumero1 + lNumero2);
+
+end;
+
+procedure TfrmPrincipal.btnSomarSubtrairClick(Sender: TObject);
+var
+  lNumero1: Integer;
+  lNumero2: Integer;
+begin
+
+  lNumero1 := StrToIntDef(edtNumero1.Text, 0);
+  lNumero2 := StrToIntDef(edtNumero2.Text, 0);
+
+  lblResultado.Caption :=
+              'Soma = ' + IntToStr(lNumero1 + lNumero2)+
+              '| Subtração = ' + IntToStr(lNumero1 - lNumero2);
+
+end;
+
+procedure TfrmPrincipal.btnSubtrairClick(Sender: TObject);
+var
+  lNumero1: Integer;
+  lNumero2: Integer;
+begin
+
+  lNumero1 := StrToIntDef(edtNumero1.Text, 0);
+  lNumero2 := StrToIntDef(edtNumero2.Text, 0);
+
+  lblResultado.Caption := 'Subtração = ' +
+                           IntToStr(lNumero1 - lNumero2);
+
+
+end;
+
+end.

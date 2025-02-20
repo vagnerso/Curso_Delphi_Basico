@@ -1,0 +1,5 @@
+object dtmPrincipal: TdtmPrincipal
+  Height = 434
+  Width = 600
+  PixelsPerInch = 120
+end

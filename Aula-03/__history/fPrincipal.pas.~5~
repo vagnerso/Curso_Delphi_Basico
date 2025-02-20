@@ -1,0 +1,63 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    btnCalcular: TButton;
+    edtPrimeiroValor: TEdit;
+    edtSegundoValor: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure btnCalcularClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnCalcularClick(Sender: TObject);
+
+const nome = 'Vagner';
+
+var
+  primeiroValor: Real;
+  segundoValor: Real;
+  resultadoSoma: Real;
+  resultadoSubtracao: Real;
+  resultadoMultiplicacao: Real;
+  resultadoDivisao: Real;
+
+begin
+
+  primeiroValor := StrToFloat(edtPrimeiroValor.Text);
+  segundoValor := StrToFloat(edtSegundoValor.Text);
+
+  resultadoSoma          := primeiroValor + segundoValor;
+  resultadoSubtracao     := primeiroValor - segundoValor;
+  resultadoMultiplicacao := primeiroValor * segundoValor;
+  resultadoDivisao       := primeiroValor / segundoValor;
+
+  ShowMessage(
+    'Aula do ' + nome + sLineBreak +
+    'O resultado das operações segue abaixo:' + sLineBreak +
+    'Soma          : ' + FloatToStr(resultadoSoma) + sLineBreak +
+    'Subtração     : ' + FloatToStr(resultadoSubtracao) + sLineBreak +
+    'Multiplicação : ' + FloatToStr(resultadoMultiplicacao) + sLineBreak +
+    'Divisão       : ' + FloatToStr(resultadoDivisao)
+  );
+
+end;
+
+end.

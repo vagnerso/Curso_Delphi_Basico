@@ -1,0 +1,80 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    btnArrayFixo: TButton;
+    mmoLista: TMemo;
+    btnArrayDinamico: TButton;
+    btnMatrizFixa: TButton;
+    btnMatrizDinamica: TButton;
+    Panel1: TPanel;
+    btnLimparLista: TButton;
+    procedure btnLimparListaClick(Sender: TObject);
+    procedure btnArrayFixoClick(Sender: TObject);
+    procedure btnArrayDinamicoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnArrayDinamicoClick(Sender: TObject);
+var
+  meuArrayDinamico: array of string;
+  I: Integer;
+begin
+
+  SetLength(meuArrayDinamico, 10);
+
+  for I := 0 to Length(meuArrayDinamico) -1 do
+  begin
+    meuArrayDinamico[i] := 'Item número : ' + i.ToString;
+  end;
+
+  for I := 0 to Length(meuArrayDinamico) -1 do
+  begin
+    mmoLista.Lines.Add(meuArrayDinamico[i]);
+  end;
+
+end;
+
+procedure TfrmPrincipal.btnArrayFixoClick(Sender: TObject);
+var
+  minhaMatrizFixa: array [0..2, 0..1] of string;
+  I: Integer;
+begin
+
+  minhaMatrizFixa[0, 0] := 'Maça';
+  minhaMatrizFixa[0, 1] := 'R$ 10,00';
+  minhaMatrizFixa[1, 0] := 'Banana';
+  minhaMatrizFixa[1, 1] := 'R$ 6,50';
+  minhaMatrizFixa[2, 0] := 'Limão';
+  minhaMatrizFixa[2, 1] := 'R$ 3,99';
+
+  for I := 0 to 2 do
+  begin
+    mmoLista.Lines.Add(minhaMatrizFixa[I,0]);
+    mmoLista.Lines.Add(minhaMatrizFixa[I,1]);
+  end;
+
+end;
+
+procedure TfrmPrincipal.btnLimparListaClick(Sender: TObject);
+begin
+  mmoLista.Lines.Clear;
+end;
+
+end.

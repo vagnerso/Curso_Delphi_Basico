@@ -1,0 +1,58 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnApagarPastaVazia: TButton;
+    btnApagarPastaComArquivos: TButton;
+    FileOpenDialog1: TFileOpenDialog;
+    btnApagarArquivo: TButton;
+    procedure btnApagarPastaVaziaClick(Sender: TObject);
+    procedure btnApagarArquivoClick(Sender: TObject);
+  private
+
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnApagarPastaVaziaClick(Sender: TObject);
+begin
+
+  if DirectoryExists('D:\temp\produtos') then
+  begin
+
+    if RemoveDir('D:\temp\produtos') then
+    begin
+      ShowMessage('A pasta foi excluida com sucesso!');
+    end;
+
+  end;
+
+end;
+
+procedure TfrmPrincipal.btnApagarArquivoClick(Sender: TObject);
+begin
+  if DeleteFile('D:\temp\arquivos\texto1.txt') then
+  begin
+    ShowMessage('Arquivo excluido com sucesso!');
+  end;
+end;
+
+end.

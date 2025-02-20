@@ -1,0 +1,41 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type RecordEndereco = record
+  Rua: String;
+  Bairro: String;
+  CEP: String;
+  Cidade: String;
+end;
+
+type RecordPessoa = record
+  Codigo: Integer;
+  Nome: String;
+  Credito: Currency;
+  Endereco: RecordEndereco;
+end;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.
