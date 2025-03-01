@@ -4,8 +4,8 @@ object frmPrincipal: TfrmPrincipal
   Caption = 
     'Delphi B'#225'sico - Aula 30 - Domine a Manipula'#231#227'o de N'#250'meros no Del' +
     'phi com Fun'#231#245'es Essenciais!'
-  ClientHeight = 416
-  ClientWidth = 880
+  ClientHeight = 376
+  ClientWidth = 954
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,14 +17,14 @@ object frmPrincipal: TfrmPrincipal
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 880
+    Width = 954
     Height = 50
     Align = alTop
     BevelOuter = bvNone
     Caption = 
-      'Delphi B'#225'sico - Aula 30 - Domine a Manipula'#231#227'o de N'#250'meros no Del' +
-      'phi com Fun'#231#245'es Essenciais!'
-    Color = 3947771
+      'Delphi B'#225'sico - Aula 31 - Arredondamento de N'#250'meros no Delphi: T' +
+      'udo o que Voc'#234' Precisa Saber!'
+    Color = 6458192
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -20
@@ -34,17 +34,17 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 983
+    ExplicitWidth = 874
   end
   object Panel2: TPanel
     Left = 0
-    Top = 396
-    Width = 880
+    Top = 356
+    Width = 954
     Height = 20
     Align = alBottom
     BevelOuter = bvNone
     Caption = 'Vagner | Dicas de Programa'#231#227'o'
-    Color = 3947771
+    Color = 6458192
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -13
@@ -54,14 +54,14 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 1
     StyleName = 'Windows'
-    ExplicitTop = 506
-    ExplicitWidth = 983
+    ExplicitTop = 387
+    ExplicitWidth = 874
   end
   object Panel3: TPanel
     Left = 0
     Top = 50
-    Width = 880
-    Height = 346
+    Width = 954
+    Height = 306
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
@@ -74,185 +74,174 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 2
     StyleName = 'Windows'
-    ExplicitWidth = 983
-    ExplicitHeight = 456
+    ExplicitWidth = 874
+    ExplicitHeight = 337
     object Label1: TLabel
-      Left = 17
-      Top = 237
-      Width = 101
+      Left = 489
+      Top = 186
+      Width = 190
       Height = 31
-      Caption = 'Resultado'
+      Caption = 'Valor arredondado'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = 8226809
+      Font.Color = 8551211
       Font.Height = -23
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
     end
-    object pnlPower: TPanel
-      Left = 441
-      Top = 121
-      Width = 394
+    object Label2: TLabel
+      Left = 17
+      Top = 186
+      Width = 347
+      Height = 31
+      Caption = 'Informe o valor a ser arredondado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 8551211
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object pnlCeil: TPanel
+      Left = 17
+      Top = 113
+      Width = 450
       Height = 40
       Cursor = crHandPoint
       BevelOuter = bvNone
-      Caption = 'Power (Pot'#234'ncia)'
-      Color = 8226809
+      Caption = 'Ceil (Arredonda para cima)'
+      Color = 8551211
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      OnClick = pnlPowerClick
+      OnClick = pnlCeilClick
     end
-    object pnlStrToFloat: TPanel
-      Left = 17
-      Top = 167
-      Width = 394
+    object pnlRoundTo: TPanel
+      Left = 489
+      Top = 65
+      Width = 450
       Height = 40
       Cursor = crHandPoint
       BevelOuter = bvNone
-      Caption = 'StrToFloat (String para num'#233'rico decimal)'
-      Color = 8226809
+      Caption = 'RoundTo (Arredondamento banc'#225'rio)'
+      Color = 8551211
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentBackground = False
       ParentFont = False
       TabOrder = 1
-      OnClick = pnlStrToFloatClick
+      OnClick = pnlRoundToClick
     end
-    object pnlRandom: TPanel
-      Left = 441
-      Top = 25
-      Width = 394
+    object pnlRound: TPanel
+      Left = 489
+      Top = 17
+      Width = 450
       Height = 40
       Cursor = crHandPoint
       BevelOuter = bvNone
-      Caption = 'Random (Gerar n'#250'meros aleat'#243'rios)'
-      Color = 8226809
+      Caption = 'Round (Arredonda para o valor mais pr'#243'ximo)'
+      Color = 8551211
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
-      OnClick = pnlRandomClick
+      OnClick = pnlRoundClick
     end
-    object pnlIntToStr: TPanel
+    object pnlTrunc: TPanel
       Left = 17
-      Top = 25
-      Width = 394
+      Top = 17
+      Width = 450
       Height = 40
       Cursor = crHandPoint
       BevelOuter = bvNone
-      Caption = 'IntToStr (Inteiro para String)'
-      Color = 8226809
+      Caption = 'Trunc (Remove a parte decimal)'
+      Color = 8551211
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentBackground = False
       ParentFont = False
       TabOrder = 3
-      OnClick = pnlIntToStrClick
+      OnClick = pnlTruncClick
     end
-    object pnlStrToInt: TPanel
+    object pnlFloor: TPanel
       Left = 17
-      Top = 73
-      Width = 394
+      Top = 65
+      Width = 450
       Height = 40
       Cursor = crHandPoint
       BevelOuter = bvNone
-      Caption = 'StrToInt (String para inteiro)'
-      Color = 8226809
+      Caption = 'Floor (Arredonda para baixo)'
+      Color = 8551211
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentBackground = False
       ParentFont = False
       TabOrder = 4
-      OnClick = pnlStrToIntClick
+      OnClick = pnlFloorClick
     end
-    object pnlSqrt: TPanel
-      Left = 441
-      Top = 169
-      Width = 394
+    object pnlSimpleRoundTo: TPanel
+      Left = 489
+      Top = 111
+      Width = 450
       Height = 40
       Cursor = crHandPoint
       BevelOuter = bvNone
-      Caption = 'Sqrt (Ra'#237'z quadrada)'
-      Color = 8226809
+      Caption = 'SimpleRoundTo (Arredondamento padr'#227'o)'
+      Color = 8551211
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
-      OnClick = pnlSqrtClick
+      OnClick = pnlSimpleRoundToClick
     end
-    object pnlFloatToStr: TPanel
-      Left = 17
-      Top = 121
-      Width = 394
-      Height = 40
-      Cursor = crHandPoint
-      BevelOuter = bvNone
-      Caption = 'FloatToStr (Num'#233'rico decimal para string)'
-      Color = 8226809
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -20
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 6
-      OnClick = pnlFloatToStrClick
-    end
-    object pnlFormatFloat: TPanel
-      Left = 441
-      Top = 73
-      Width = 394
-      Height = 40
-      Cursor = crHandPoint
-      BevelOuter = bvNone
-      Caption = 'FormatFloat (Formatar decimais)'
-      Color = 8226809
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -20
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 7
-      OnClick = pnlFormatFloatClick
-    end
-    object edtResultado: TEdit
-      Left = 17
-      Top = 271
-      Width = 818
+    object edtValorArredondado: TEdit
+      Left = 489
+      Top = 220
+      Width = 450
       Height = 53
+      Color = 6458192
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = 3947771
+      Font.Color = clWhite
       Font.Height = -33
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 6
+    end
+    object edtValor: TEdit
+      Left = 17
+      Top = 220
+      Width = 450
+      Height = 53
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 8551211
+      Font.Height = -33
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
     end
   end
 end

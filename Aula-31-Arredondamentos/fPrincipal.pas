@@ -13,24 +13,22 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
-    pnlPower: TPanel;
-    pnlStrToFloat: TPanel;
-    pnlRandom: TPanel;
-    pnlIntToStr: TPanel;
-    pnlStrToInt: TPanel;
-    pnlSqrt: TPanel;
-    pnlFloatToStr: TPanel;
+    pnlCeil: TPanel;
+    pnlRoundTo: TPanel;
+    pnlRound: TPanel;
+    pnlTrunc: TPanel;
+    pnlFloor: TPanel;
     Label1: TLabel;
-    pnlFormatFloat: TPanel;
-    edtResultado: TEdit;
-    procedure pnlIntToStrClick(Sender: TObject);
-    procedure pnlStrToIntClick(Sender: TObject);
-    procedure pnlFloatToStrClick(Sender: TObject);
-    procedure pnlStrToFloatClick(Sender: TObject);
-    procedure pnlRandomClick(Sender: TObject);
-    procedure pnlFormatFloatClick(Sender: TObject);
-    procedure pnlPowerClick(Sender: TObject);
-    procedure pnlSqrtClick(Sender: TObject);
+    pnlSimpleRoundTo: TPanel;
+    edtValorArredondado: TEdit;
+    edtValor: TEdit;
+    Label2: TLabel;
+    procedure pnlTruncClick(Sender: TObject);
+    procedure pnlFloorClick(Sender: TObject);
+    procedure pnlCeilClick(Sender: TObject);
+    procedure pnlRoundClick(Sender: TObject);
+    procedure pnlRoundToClick(Sender: TObject);
+    procedure pnlSimpleRoundToClick(Sender: TObject);
 
   private
 
@@ -47,92 +45,75 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmPrincipal.pnlFloatToStrClick(Sender: TObject);
+procedure TfrmPrincipal.pnlCeilClick(Sender: TObject);
 var
-  lNumero: Double;
+  lValor: Currency;
+  lResultado: Integer;
 begin
 
-  lNumero := 10.99;
-
-  edtResultado.Text := FloatToStr(lNumero);
-
+  lValor := StrToFloatDef(edtValor.Text, 0);
+  lResultado := Ceil(lValor);
+  edtValorArredondado.Text := lResultado.ToString;
 
 end;
 
-procedure TfrmPrincipal.pnlFormatFloatClick(Sender: TObject);
+procedure TfrmPrincipal.pnlFloorClick(Sender: TObject);
 var
-  lNumero: Double;
+  lValor: Currency;
+  lResultado: Integer;
 begin
 
-  lNumero := 10.97586;
-
-  edtResultado.Text := FormatFloat('#,##0.00', lNumero);
+  lValor := StrToFloatDef(edtValor.Text, 0);
+  lResultado := Floor(lValor);
+  edtValorArredondado.Text := lResultado.ToString;
 
 end;
 
-procedure TfrmPrincipal.pnlIntToStrClick(Sender: TObject);
+procedure TfrmPrincipal.pnlRoundClick(Sender: TObject);
 var
-  lNumero: Integer;
+  lValor: Currency;
+  lResultado: Currency;
 begin
 
-  lNumero := 500;
-
-  //edtResultado.Text := IntToStr(lNumero);
-
-  edtResultado.Text := lNumero.ToString;
+  lValor := StrToFloatDef(edtValor.Text, 0);
+  lResultado := Round(lValor);
+  edtValorArredondado.Text := FloatToStr(lResultado);
 
 end;
 
-procedure TfrmPrincipal.pnlPowerClick(Sender: TObject);
+procedure TfrmPrincipal.pnlRoundToClick(Sender: TObject);
 var
-  lNumero: Integer;
+  lValor: Currency;
+  lResultado: Currency;
 begin
 
-  lNumero := 4;
-
-  edtResultado.Text := Power(lNumero, 3).ToString;
+  lValor := StrToFloatDef(edtValor.Text, 0);
+  lResultado := RoundTo(lValor, -2);
+  edtValorArredondado.Text := FloatToStr(lResultado);
 
 end;
 
-procedure TfrmPrincipal.pnlRandomClick(Sender: TObject);
+procedure TfrmPrincipal.pnlSimpleRoundToClick(Sender: TObject);
 var
-  lNumero: Integer;
+  lValor: Currency;
+  lResultado: Currency;
 begin
 
-  //lNumero := Random(100);
-
-  lNumero := RandomRange(100, 300);
-
-  edtResultado.Text := lNumero.ToString;
+  lValor := StrToFloatDef(edtValor.Text, 0);
+  lResultado := SimpleRoundTo(lValor, -2);
+  edtValorArredondado.Text := FloatToStr(lResultado);
 
 end;
 
-procedure TfrmPrincipal.pnlSqrtClick(Sender: TObject);
+procedure TfrmPrincipal.pnlTruncClick(Sender: TObject);
 var
-  lNumero: Integer;
+  lValor: Currency;
+  lResultado: Integer;
 begin
 
-  lNumero := 9;
-
-  edtResultado.Text := Sqrt(lNumero).ToString;
-
-end;
-
-procedure TfrmPrincipal.pnlStrToFloatClick(Sender: TObject);
-var
-  lNumero: Double;
-begin
-
-  lNumero := StrToFloatDef(edtResultado.Text, 0);
-
-end;
-
-procedure TfrmPrincipal.pnlStrToIntClick(Sender: TObject);
-var
-  lNumero: Integer;
-begin
-
-  lNumero := StrToIntDef(edtResultado.Text, 0);
+  lValor := StrToFloatDef(edtValor.Text, 0);
+  lResultado := Trunc(lValor);
+  edtValorArredondado.Text := lResultado.ToString;
 
 end;
 
