@@ -1,0 +1,208 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage,
+  Vcl.WinXPanels, StrUtils, Math, Vcl.WinXPickers, DateUtils;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    pnlObterDoCampo: TPanel;
+    pnlDecode: TPanel;
+    pnlEncode: TPanel;
+    pnlObterDataHora: TPanel;
+    pnlFormatar: TPanel;
+    pnlExtrairDaData: TPanel;
+    Label2: TLabel;
+    mmoListaDataHoras: TMemo;
+    Label1: TLabel;
+    DatePicker1: TDatePicker;
+    pnlDiferencaEntreDatas: TPanel;
+    pnlIncrementar: TPanel;
+    pnlSubtrairSomar: TPanel;
+    procedure pnlObterDataHoraClick(Sender: TObject);
+    procedure pnlFormatarClick(Sender: TObject);
+    procedure pnlObterDoCampoClick(Sender: TObject);
+    procedure pnlEncodeClick(Sender: TObject);
+    procedure pnlDecodeClick(Sender: TObject);
+    procedure pnlExtrairDaDataClick(Sender: TObject);
+    procedure pnlDiferencaEntreDatasClick(Sender: TObject);
+    procedure pnlIncrementarClick(Sender: TObject);
+
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.pnlDiferencaEntreDatasClick(Sender: TObject);
+begin
+
+  mmoListaDataHoras.Lines.Add(DaysBetween(Now, DatePicker1.Date).ToString);
+
+end;
+
+procedure TfrmPrincipal.pnlIncrementarClick(Sender: TObject);
+var
+  lDataHora: TDateTime;
+begin
+
+  lDataHora:= StrToDateTime('01/01/2025 12:30:25');
+  mmoListaDataHoras.Lines.Clear;
+    mmoListaDataHoras.Lines.Add(FormatDateTime('dd/MM/yyyy HH:mm:ss', lDataHora));
+  mmoListaDataHoras.Lines.Add(FormatDateTime('dd/MM/yyyy HH:mm:ss', IncDay(lDataHora, 5)));
+  mmoListaDataHoras.Lines.Add(FormatDateTime('dd/MM/yyyy HH:mm:ss', IncHour(lDataHora)));
+
+  mmoListaDataHoras.Lines.Add(FormatDateTime('dd/MM/yyyy HH:mm:ss', IncHour(lDataHora)));
+end;
+
+procedure TfrmPrincipal.pnlObterDoCampoClick(Sender: TObject);
+var
+  lData: Tdate;
+begin
+
+  lData := DatePicker1.Date;
+  mmoListaDataHoras.Lines.Add('A data do campo é:' + DateToStr(lData));
+
+end;
+
+procedure TfrmPrincipal.pnlFormatarClick(Sender: TObject);
+var
+  lDataHoraAtual: TDateTime;
+begin
+
+  lDataHoraAtual := Now;
+
+  mmoListaDataHoras.Lines.Clear;
+
+  mmoListaDataHoras.Lines.Add('== Data/Horas ==');
+
+  mmoListaDataHoras.Lines.Add('dd/MM: ' + FormatDateTime('dd/MM', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('t: ' + FormatDateTime('t', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('tt: ' + FormatDateTime('tt', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('dd/MM/yyyy: ' + FormatDateTime('dd/MM/yyyy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('MM/dd/yyyy: ' + FormatDateTime('MM/dd/yyyy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('dd ddd/MMM/yyyy: ' + FormatDateTime('dd ddd/MMM/yyyy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('dd dddd/MMMM/yyyy: ' + FormatDateTime('dd dddd/MMMD/yyyy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('dddd dd/MMM/yyyy: ' + FormatDateTime('dddd dd/MMM/yyyy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('dd de MMMM de yyyy: ' + FormatDateTime(' dd "de" MMMM "de" yyyy', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('dd/MM/yyyy HH:mm:ss:zzz: ' + FormatDateTime('dd/MM/yyyy HH:mm:ss:zzz', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('dd/MM/yyyy HH:mm:ss:zzz: ' + FormatDateTime('dd/MM/yyyy HH:mm:ss', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('== Dia ==');
+  mmoListaDataHoras.Lines.Add('dddd: ' + FormatDateTime('dddd', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('ddd: '+ FormatDateTime('ddd', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('dd: ' + FormatDateTime('dd', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('d: ' + FormatDateTime('d', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('== Mês ==');
+
+  mmoListaDataHoras.Lines.Add('MMMM: ' + FormatDateTime('MMMM', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('MMM: ' + FormatDateTime('MMM', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('MM: ' + FormatDateTime('MM', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('M: ' + FormatDateTime('M', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('== Ano ==');
+  mmoListaDataHoras.Lines.Add('yyyy: ' + FormatDateTime('yyyy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('yy: ' + FormatDateTime('yy', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('y: ' + FormatDateTime('y', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('== Horas ==');
+  mmoListaDataHoras.Lines.Add('hh: ' + FormatDateTime('hh', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('HH: ' + FormatDateTime('HH', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('== Minutos ==');
+  mmoListaDataHoras.Lines.Add('mm: ' + FormatDateTime('mm', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('== Segundos ==');
+  mmoListaDataHoras.Lines.Add('ss: ' + FormatDateTime('ss', lDataHoraAtual));
+
+  mmoListaDataHoras.Lines.Add('== Milésimos de segundo ==');
+
+  mmoListaDataHoras.Lines.Add('z: ' + FormatDateTime('z', lDataHoraAtual));
+  mmoListaDataHoras.Lines.Add('zzz: ' + FormatDateTime('zzz', lDataHoraAtual));
+
+end;
+
+procedure TfrmPrincipal.pnlEncodeClick(Sender: TObject);
+var
+  lDia, lMes, lAno, lHora, lMinuto, lSegundo, lMilesimo: Word;
+  lDataHora: TDateTime;
+begin
+
+  lDia := 02;
+  lMes := 06;
+  lAno:= 2027;
+  lHora:= 23;
+  lMinuto := 25;
+  lSegundo:= 8;
+  lMilesimo := 156;
+
+  lDataHora:= EncodeDateTime(lAno, lMes, lDia, lHora, lMinuto, lSegundo, lMilesimo);
+
+  mmoListaDataHoras.Lines.Add(FormatDateTime('dd/MM/yyyy HH:mm:ss:zzz',lDataHora));
+
+end;
+
+procedure TfrmPrincipal.pnlDecodeClick(Sender: TObject);
+var
+  lDia, lMes, lAno, lHora, lMinuto, lSegundo, lMilesimo: Word;
+  lDataHora: TDateTime;
+begin
+
+  lDataHora := Now;
+  DecodeDateTime(lDataHora, lAno, lMes, lDia, lHora, lMinuto, lSegundo, lMilesimo);
+
+  ShowMessage(lAno.ToString + sLineBreak + lMes.ToString + sLineBreak + lHora.ToString);
+
+end;
+
+procedure TfrmPrincipal.pnlExtrairDaDataClick(Sender: TObject);
+var
+  lDataHora: TDateTime;
+begin
+
+  lDataHora := Now;
+  mmoListaDataHoras.Lines.Add('Dia da semana:'+DayOfWeek(lDataHora).ToString);
+  mmoListaDataHoras.Lines.Add('Dia do mês:'+DayOfTheMonth(lDataHora).ToString);
+  mmoListaDataHoras.Lines.Add('Dia do ano:'+DayOfTheYear(lDataHora).ToString);
+  mmoListaDataHoras.Lines.Add('Mês do ano:'+MonthOfTheYear(lDataHora).ToString);
+  mmoListaDataHoras.Lines.Add('Semana do mês:'+WeekOfTheMonth(lDataHora).ToString);
+  mmoListaDataHoras.Lines.Add('Semana do ano:'+WeekOfTheYear(lDataHora).ToString);
+
+end;
+
+procedure TfrmPrincipal.pnlObterDataHoraClick(Sender: TObject);
+var
+  lDataAtual: TDate;
+  lHoraAtual: TDate;
+  lDataHoraAtual: TDate;
+begin
+
+  lDataAtual := Date;
+  lHoraAtual := Time;
+  lDataHoraAtual := Now;
+
+  ShowMessage(DateToStr(lDataAtual) + sLineBreak +
+              TimeToStr(lHoraAtual) + sLineBreak +
+              DateTimeToStr(lDataHoraAtual) + sLineBreak);
+
+end;
+
+end.
+

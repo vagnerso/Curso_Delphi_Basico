@@ -1,0 +1,214 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 
+    'Delphi B'#225'sico - Aula 32 - Delphi B'#225'sico: Manipula'#231#227'o de Data e H' +
+    'ora Passo a Passo!'
+  ClientHeight = 376
+  ClientWidth = 954
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 954
+    Height = 50
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 
+      'Delphi B'#225'sico - Aula 32 - Delphi B'#225'sico: Manipula'#231#227'o de Data e H' +
+      'ora Passo a Passo!'
+    Color = 13727259
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 948
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 356
+    Width = 954
+    Height = 20
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'Vagner | Dicas de Programa'#231#227'o'
+    Color = 13727259
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitTop = 347
+    ExplicitWidth = 948
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 50
+    Width = 954
+    Height = 306
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitWidth = 948
+    ExplicitHeight = 297
+    object Label2: TLabel
+      Left = 17
+      Top = 186
+      Width = 347
+      Height = 31
+      Caption = 'Informe o valor a ser arredondado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 13727259
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object pnlCeil: TPanel
+      Left = 17
+      Top = 113
+      Width = 450
+      Height = 40
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'Ceil (Arredonda para cima)'
+      Color = 7552521
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object pnlRoundTo: TPanel
+      Left = 489
+      Top = 65
+      Width = 450
+      Height = 40
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'RoundTo (Arredondamento banc'#225'rio)'
+      Color = 7552521
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 1
+    end
+    object pnlRound: TPanel
+      Left = 489
+      Top = 17
+      Width = 450
+      Height = 40
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'Round (Arredonda para o valor mais pr'#243'ximo)'
+      Color = 7552521
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 2
+    end
+    object pnlTrunc: TPanel
+      Left = 17
+      Top = 19
+      Width = 450
+      Height = 40
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'Trunc (Remove a parte decimal)'
+      Color = 7552521
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 3
+    end
+    object pnlFloor: TPanel
+      Left = 17
+      Top = 65
+      Width = 450
+      Height = 40
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'Floor (Arredonda para baixo)'
+      Color = 7552521
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 4
+    end
+    object pnlSimpleRoundTo: TPanel
+      Left = 489
+      Top = 111
+      Width = 450
+      Height = 40
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'SimpleRoundTo (Arredondamento padr'#227'o)'
+      Color = 7552521
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 5
+    end
+    object edtValor: TEdit
+      Left = 17
+      Top = 220
+      Width = 450
+      Height = 53
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 7552521
+      Font.Height = -33
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+    end
+  end
+end

@@ -1,0 +1,139 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  Vcl.ExtCtrls, Vcl.FileCtrl, Vcl.ExtDlgs, System.IOUtils, Vcl.Imaging.pngimage,
+  Vcl.WinXPanels, StrUtils, Math, Vcl.WinXPickers;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    pnlCeil: TPanel;
+    pnlRoundTo: TPanel;
+    pnlRound: TPanel;
+    pnlTrunc: TPanel;
+    pnlFloor: TPanel;
+    pnlSimpleRoundTo: TPanel;
+    edtValor: TEdit;
+    Label2: TLabel;
+    Memo1: TMemo;
+    Label1: TLabel;
+    DatePicker1: TDatePicker;
+    procedure pnlTruncClick(Sender: TObject);
+    procedure pnlFloorClick(Sender: TObject);
+
+  private
+
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.pnlFloorClick(Sender: TObject);
+var
+  lDataHoraAtual: TDateTime;
+begin
+
+  lDataHoraAtual := Now;
+
+
+  ShowMessage('d: ' + FormatDateTime('d', lDataHoraAtual));
+
+  ShowMessage('dd: ' + FormatDateTime('dd', lDataHoraAtual));
+
+  ShowMessage('ddd: '+ FormatDateTime('ddd', lDataHoraAtual));
+
+  ShowMessage('dddd: ' + FormatDateTime('dddd', lDataHoraAtual));
+
+  ShowMessage('** Formatação de meses **');
+
+  ShowMessage('M: -> ' + FormatDateTime('M', lDataHoraAtual));
+
+  ShowMessage('MM: -> ' + FormatDateTime('MM', lDataHoraAtual));
+
+  ShowMessage('MMM: -> ' + FormatDateTime('MMM', lDataHoraAtual));
+
+  ShowMessage('MMMM: -> ' + FormatDateTime('MMMM', lDataHoraAtual));
+
+  ShowMessage('** Formatação de anos **');
+
+  ShowMessage('y: ' + FormatDateTime('y', lDataHoraAtual));
+
+  ShowMessage('yy: ' + FormatDateTime('yy', lDataHoraAtual));
+
+  ShowMessage('yyyy: ' + FormatDateTime('yyyy', lDataHoraAtual));
+
+  ShowMessage('** Formatação de horas **');
+
+  ShowMessage('hh: ' + FormatDateTime('hh', lDataHoraAtual));
+
+  ShowMessage('HH: ' + FormatDateTime('HH', lDataHoraAtual));
+
+  ShowMessage('** Formatação de minutos **');
+
+  ShowMessage('mm: ' + FormatDateTime('mm', lDataHoraAtual));
+
+  ShowMessage('** Formatação de segundos **');
+
+  ShowMessage('ss: ' + FormatDateTime('ss', lDataHoraAtual));
+
+  ShowMessage('** Formatação de milisegundos **');
+
+  ShowMessage('z: ' + FormatDateTime('z', lDataHoraAtual));
+
+  ShowMessage('zzz: ' + FormatDateTime('zzz', lDataHoraAtual));
+
+  ShowMessage('** Formatações de personalizados **');
+
+  ShowMessage('dd/MM/yyyy: ' + FormatDateTime('dd/MM/yyyy', lDataHoraAtual));
+
+  ShowMessage('MM/dd/yyyy: ' + FormatDateTime('MM/dd/yyyy', lDataHoraAtual));
+
+  ShowMessage('dd/MM: ' + FormatDateTime('dd/MM', lDataHoraAtual));
+
+  ShowMessage('dd ddd/MMM/yyyy: ' + FormatDateTime('dd ddd/MMM/yyyy', lDataHoraAtual));
+
+  ShowMessage('dd dddd/MMMM/yyyy: ' + FormatDateTime('dd dddd/MMMD/yyyy', lDataHoraAtual));
+
+  ShowMessage('dddd dd/MMM/yyyy: ' + FormatDateTime('dddd dd/MMM/yyyy', lDataHoraAtual));
+
+  ShowMessage('dd de MMMM de yyyy: ' + FormatDateTime(' dd "de" MMMM "de" yyyy', lDataHoraAtual));
+
+  ShowMessage('t: ' + FormatDateTime('t', lDataHoraAtual));
+
+  ShowMessage('tt: ' + FormatDateTime('tt', lDataHoraAtual));
+
+end;
+
+procedure TfrmPrincipal.pnlTruncClick(Sender: TObject);
+var
+  lDataAtual: TDate;
+  lHoraAtual: TDate;
+  lDataHoraAtual: TDate;
+begin
+
+  lDataAtual := Date;
+  lHoraAtual := Time;
+  lDataHoraAtual := Now;
+
+  ShowMessage(DateToStr(lDataAtual) + sLineBreak +
+              TimeToStr(lHoraAtual) + sLineBreak +
+              DateTimeToStr(lDataHoraAtual) + sLineBreak);
+
+end;
+
+end.
+
